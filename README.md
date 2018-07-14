@@ -8,7 +8,7 @@ Setup
 ---
 
 ```
-npm install
+yarn
 ```
 
 
@@ -18,12 +18,5 @@ Usage
 Start the development server with this command:
 
 ```
-npm start
-```
-
-Compile
----
-
-```
-npm run build
+yarn run dev
 ```
