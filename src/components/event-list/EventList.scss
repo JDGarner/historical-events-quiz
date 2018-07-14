@@ -1,0 +1,13 @@
+.event-list {
+  width: 100%;
+  height: 100%;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: lightgrey;
+
+  &.isDraggingOver {
+    background: lightblue;
+  }
+}

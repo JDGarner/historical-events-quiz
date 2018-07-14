@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from './components/counter/Counter';
+import Home from './containers/home/Home';
+import "./base.scss";
 
 document.addEventListener('DOMContentLoaded', function() {
   ReactDOM.render(
-    React.createElement(Counter),
+    React.createElement(Home),
     document.getElementById('app')
   );
 });
