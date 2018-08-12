@@ -1,5 +1,6 @@
 import React from "react";
 import EventList from "../../components/event-list/EventList";
+import Background from "../../components/background/Background";
 import "./Home.scss";
 
 class Home extends React.Component {
@@ -104,6 +105,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
+        <Background />
         <EventList events={this.state.displayedEvents} />
       </div>
     );

@@ -11,18 +11,8 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-const grid = 20;
-
-const getItemStyle = (isDragging, draggableStyle) => {
-  return {
-    userSelect: "none",
-    padding: grid * 2,
-    margin: `0 0 ${grid}px 0`,
-    background: isDragging ? "lightgreen" : "grey",
-
-    // styles we need to apply on draggables
-    ...draggableStyle
-  };
+const getItemStyle = draggableStyle => {
+  return draggableStyle;
 };
 
 class EventList extends Component {
@@ -54,23 +44,18 @@ class EventList extends Component {
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable droppableId="droppable">
           {(provided, snapshot) => (
-            <div
-              ref={provided.innerRef}
-              className={classNames("event-list", {
-                isDraggingOver: snapshot.isDraggingOver
-              })}
-            >
+            <div ref={provided.innerRef} className="event-list">
               {this.state.events.map((event, index) => (
                 <Draggable key={event.id} draggableId={event.id} index={index}>
                   {(provided, snapshot) => (
                     <div
+                      className={classNames("event", {
+                        isDragging: snapshot.isDragging
+                      })}
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      style={getItemStyle(
-                        snapshot.isDragging,
-                        provided.draggableProps.style
-                      )}
+                      style={getItemStyle(provided.draggableProps.style)}
                     >
                       {event.description}
                     </div>

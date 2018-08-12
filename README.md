@@ -1,8 +1,5 @@
-React Skeleton App
+Historical Events Quiz game
 ---
-
-Basic React starter project
-
 
 Setup
 ---
