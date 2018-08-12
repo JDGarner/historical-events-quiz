@@ -1,7 +1,7 @@
-$particleSize: 40vmin;
+$particleSize: 35vmin;
 $animationDuration: 100s;
-$amount: 5;
-$colors: (#da7cec, #a15fdf, #3c75dd);
+$amount: 8;
+$colors: (#5d65d6, #8767d1, #679ed1);
 
 .background {
   background: #67bcd1;
@@ -29,7 +29,7 @@ $colors: (#da7cec, #a15fdf, #3c75dd);
         animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
         animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
         transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
-        $blurRadius: (random() + 0.75) * $particleSize * 0.75;
+        $blurRadius: (random() + 0.95) * $particleSize * 0.95;
         $x: if(random() > 0.5, -1, 1);
         box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
       }

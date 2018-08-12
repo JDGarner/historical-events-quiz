@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+$mobile-width: 768px;
 
 html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
 }
