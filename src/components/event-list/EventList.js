@@ -19,7 +19,7 @@ class EventList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: props.events
+      events: props.initialEvents
     };
     this.onDragEnd = this.onDragEnd.bind(this);
   }
@@ -46,7 +46,11 @@ class EventList extends Component {
           {(provided, snapshot) => (
             <div ref={provided.innerRef} className="event-list">
               {this.state.events.map((event, index) => (
-                <Draggable key={event.id} draggableId={event.id} index={index}>
+                <Draggable
+                  key={event._id}
+                  draggableId={event._id}
+                  index={index}
+                >
                   {(provided, snapshot) => (
                     <div
                       className={classNames("event", {

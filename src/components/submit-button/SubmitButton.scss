@@ -1,0 +1,15 @@
+@import '../../mixins';
+
+.submit-button {
+  cursor: pointer;
+  font-size: 6vh;
+  margin: 2% 0 8% 0;
+
+  &:before {
+    content: "\2714";
+  }
+
+  @include mobile {
+    margin: 7% 0 15% 0;
+  }
+}

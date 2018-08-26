@@ -1,15 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
-$mobile-width: 768px;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300");
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-@mixin mobile {
-  @media (max-width: #{$mobile-width}) {
-    @content;
-  }
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
 }

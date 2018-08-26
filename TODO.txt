@@ -1,0 +1,22 @@
+- make key unique
+- submit button loads new set of events
+- Add loading indicator?
+- move Home to components?
+
+- Create game:
+  -> Order events
+  -> Submit
+  -> Increase/Decrease Score/Rating
+  -> Show correct answers if wrong
+
+- Create game start:
+  - Tip for what to do on first question, hide subsequently
+
+- Move correctOrderedEvents to backend to prevent cheating
+- Create ELO rating system
+
+
+- Make it into a PWA
+
+- Make another version, 'Order Everything'
+(player has to order more abstract things, sequences/shapes/etc as well as events)
