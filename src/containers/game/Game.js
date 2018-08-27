@@ -1,5 +1,6 @@
 import React from "react";
 import { getAllEvents } from "../../api/events";
+import Score from "../../components/score/Score";
 import EventList from "../../components/event-list/EventList";
 import SubmitButton from "../../components/submit-button/SubmitButton";
 import "./Game.scss";
@@ -9,12 +10,15 @@ class Game extends React.Component {
     super();
 
     this.state = {
+      score: 0,
       allEvents: [],
-      correctOrderEvents: [],
+      correctlyOrderedEvents: [],
+      initiallyOrderedEvents: [],
       playerOrderedEvents: []
     };
 
     this.onSubmit = this.onSubmit.bind(this);
+    this.onRedorderEvents = this.onRedorderEvents.bind(this);
     this.onEventsFetchSuccess = this.onEventsFetchSuccess.bind(this);
     this.onEventsFetchFailure = this.onEventsFetchFailure.bind(this);
   }
@@ -28,7 +32,8 @@ class Game extends React.Component {
 
     this.setState({
       allEvents,
-      correctOrderEvents: this.sortEventsByDate(events),
+      correctlyOrderedEvents: this.sortEventsByDate(events),
+      initiallyOrderedEvents: events,
       playerOrderedEvents: events
     });
   }
@@ -56,22 +61,52 @@ class Game extends React.Component {
     return events;
   }
 
+  onRedorderEvents(events) {
+    this.setState({ playerOrderedEvents: events });
+  }
+
+  checkAnswer(playerOrderedEvents, correctlyOrderedEvents) {
+    playerOrderedEvents.every(
+      (event, i) => event._id === correctlyOrderedEvents[i]._id
+    );
+  }
+
   onSubmit() {
     // check order of events against correct order of events
+    const isCorrect = this.checkAnswer(
+      this.state.playerOrderedEvents,
+      this.state.correctlyOrderedEvents
+    );
+
     // if correct -> show tick or something
     // if incorrect -> show correct order
     // increase/decrease score
+
+    const events = this.getUniqueEvents(this.state.allEvents);
+
+    this.setState({
+      score: this.state.score += isCorrect ? 1 : 0,
+      correctlyOrderedEvents: this.sortEventsByDate(events),
+      initiallyOrderedEvents: events
+    });
+  }
+
+  generateUniqueQuestionKey(events) {
+    return events.length > 0
+      ? events.reduce((acc, event) => acc + event._id, "")
+      : "empty_question_key";
   }
 
   render() {
-    // TODO: make unique
-    const id = this.state.playerOrderedEvents[0] ? this.state.playerOrderedEvents[0]._id : "0";
-
     return (
       <div className="game">
+        <Score score={this.state.score} />
         <EventList
-          key={id}
-          initialEvents={this.state.playerOrderedEvents}
+          key={this.generateUniqueQuestionKey(
+            this.state.initiallyOrderedEvents
+          )}
+          initialEvents={this.state.initiallyOrderedEvents}
+          onRedorderEvents={this.onRedorderEvents}
         />
         <SubmitButton onSubmit={this.onSubmit} />
       </div>

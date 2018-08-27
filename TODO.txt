@@ -1,5 +1,5 @@
-- make key unique
-- submit button loads new set of events
+- update backend with correct dates
+- change background dots to greyscale with opacity & less blur
 - Add loading indicator?
 - move Home to components?
 

@@ -30,13 +30,14 @@ class EventList extends Component {
       return;
     }
 
-    this.setState({
-      events: reorder(
-        this.state.events,
-        result.source.index,
-        result.destination.index
-      )
-    });
+    const events = reorder(
+      this.state.events,
+      result.source.index,
+      result.destination.index
+    );
+
+    this.setState({ events });
+    this.props.onRedorderEvents(events);
   }
 
   render() {
