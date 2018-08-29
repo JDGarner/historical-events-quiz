@@ -56,9 +56,7 @@ class Game extends React.Component {
   }
 
   sortEventsByDate(events) {
-    // TODO: change date format then do this function
-
-    return events;
+    return events.slice().sort((a, b) => a.date >= b.date);
   }
 
   onRedorderEvents(events) {
@@ -66,7 +64,7 @@ class Game extends React.Component {
   }
 
   checkAnswer(playerOrderedEvents, correctlyOrderedEvents) {
-    playerOrderedEvents.every(
+    return playerOrderedEvents.every(
       (event, i) => event._id === correctlyOrderedEvents[i]._id
     );
   }
@@ -85,7 +83,7 @@ class Game extends React.Component {
     const events = this.getUniqueEvents(this.state.allEvents);
 
     this.setState({
-      score: this.state.score += isCorrect ? 1 : 0,
+      score: (this.state.score += isCorrect ? 1 : -1),
       correctlyOrderedEvents: this.sortEventsByDate(events),
       initiallyOrderedEvents: events
     });

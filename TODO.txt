@@ -1,22 +1,18 @@
-- update backend with correct dates
 - change background dots to greyscale with opacity & less blur
 - Add loading indicator?
 - move Home to components?
 
-- Create game:
-  -> Order events
-  -> Submit
-  -> Increase/Decrease Score/Rating
-  -> Show correct answers if wrong
+- If correct show some animation
+- If wrong show correct answers and some animation
 
 - Create game start:
   - Tip for what to do on first question, hide subsequently
 
 - Move correctOrderedEvents to backend to prevent cheating
 - Create ELO rating system
-
+- move API fields into constants
 
 - Make it into a PWA
 
-- Make another version, 'Order Everything'
+- Add categories (e.g. ancient history, modern, recent events, etc)
 (player has to order more abstract things, sequences/shapes/etc as well as events)
