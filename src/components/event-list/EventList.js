@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import classNames from "classnames";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import Event from "../event/Event";
 import "./EventList.scss";
 
 const reorder = (list, startIndex, endIndex) => {
@@ -62,7 +63,7 @@ class EventList extends Component {
                       {...provided.dragHandleProps}
                       style={getItemStyle(provided.draggableProps.style)}
                     >
-                      {event.description}
+                      <Event description={event.description} />
                     </div>
                   )}
                 </Draggable>

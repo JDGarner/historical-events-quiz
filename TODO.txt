@@ -2,8 +2,10 @@
 - Add loading indicator?
 - move Home to components?
 
+- host it on Heroku
 - If correct show some animation
 - If wrong show correct answers and some animation
+- add hover, on press down styles to submit buttons
 
 - Create game start:
   - Tip for what to do on first question, hide subsequently

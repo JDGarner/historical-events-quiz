@@ -1,13 +1,13 @@
 import React from "react";
 import posed from "react-pose";
-import "./SubmitButton.scss";
+import "./Event.scss";
 
-const SubmitButtonPosed = posed.button({
+const EventPosed = posed.div({
   idle: { scale: 1 },
   hovered: { scale: 1.05 }
 });
 
-class SubmitButton extends React.Component {
+class Event extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,17 +17,18 @@ class SubmitButton extends React.Component {
 
   render() {
     return (
-      <div className="submit-button-container">
-        <SubmitButtonPosed
-          className="submit-button"
-          onClick={this.props.onSubmit}
+      <div className="event-container">
+        <EventPosed
+          className="event"
           pose={this.state.hovering ? "hovered" : "idle"}
           onMouseEnter={() => this.setState({ hovering: true })}
           onMouseLeave={() => this.setState({ hovering: false })}
-        />
+        >
+          {this.props.description}
+        </EventPosed>
       </div>
     );
   }
 }
 
-export default SubmitButton;
+export default Event;

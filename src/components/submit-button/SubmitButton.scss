@@ -1,15 +1,21 @@
-@import '../../mixins';
+@import "../../mixins";
+
+.submit-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .submit-button {
+  height: 8vh;
+  width: 8vh;
   cursor: pointer;
+  outline: none;
   font-size: 6vh;
   margin: 2% 0 8% 0;
-
-  &:before {
-    content: "\2714";
-  }
+  background: url("resources/images/submit.svg") center no-repeat;
 
   @include mobile {
-    margin: 7% 0 15% 0;
+    margin: 2% 0 9% 0;
   }
 }

@@ -9,7 +9,7 @@ const config = {
     filename: "bundle.js",
     publicPath: "/"
   },
-  mode: 'development',
+  mode: "development",
   module: {
     rules: [
       {
@@ -21,6 +21,10 @@ const config = {
         test: /\.scss$/,
         include: path.join(__dirname, "src"),
         loader: "style-loader!css-loader!sass-loader"
+      },
+      {
+        test: /.svg$/,
+        use: ["file-loader"]
       }
     ]
   },
