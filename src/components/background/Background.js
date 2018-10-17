@@ -1,7 +1,7 @@
 import React from "react";
 import "./Background.scss";
 
-const Background = ({ numberOfParticles = 5 }) => {
+const Background = ({ numberOfParticles = 4 }) => {
   const particles = [];
   for (let i = 0; i < numberOfParticles; i++) {
     particles.push(<span key={i} className="particle" />);
@@ -9,4 +9,5 @@ const Background = ({ numberOfParticles = 5 }) => {
 
   return <div className="background">{particles}</div>;
 };
+
 export default Background;

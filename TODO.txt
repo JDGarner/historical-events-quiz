@@ -1,11 +1,11 @@
-- change background dots to greyscale with opacity & less blur
+- animate background color
 - Add loading indicator?
 - move Home to components?
 
 - host it on Heroku
 - If correct show some animation
 - If wrong show correct answers and some animation
-- add hover, on press down styles to submit buttons
+- add on press down styles to buttons and items
 
 - Create game start:
   - Tip for what to do on first question, hide subsequently

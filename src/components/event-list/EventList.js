@@ -55,7 +55,7 @@ class EventList extends Component {
                 >
                   {(provided, snapshot) => (
                     <div
-                      className={classNames("event", {
+                      className={classNames({
                         isDragging: snapshot.isDragging
                       })}
                       ref={provided.innerRef}

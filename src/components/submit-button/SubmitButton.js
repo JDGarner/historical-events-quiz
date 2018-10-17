@@ -3,8 +3,8 @@ import posed from "react-pose";
 import "./SubmitButton.scss";
 
 const SubmitButtonPosed = posed.button({
-  idle: { scale: 1 },
-  hovered: { scale: 1.05 }
+  idle: { opacity: 0.7 },
+  hovered: { opacity: 1 }
 });
 
 class SubmitButton extends React.Component {

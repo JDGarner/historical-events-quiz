@@ -5,26 +5,4 @@
   flex-direction: column;
   justify-content: flex-end;
   flex: 1;
-
-  .event {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 4vh 4vw;
-    background: #ffffff2e;
-    border: solid white 1px;
-    text-transform: uppercase;
-    user-select: none;
-
-    height: 4.25vh;
-    margin: 0 15% 5vh 15%;
-    font-size: 3vh;
-
-    @include mobile {
-      height: 3vh;
-      font-size: 2.25vh;
-      margin: 0 10% 5vh 10%;
-    }
-  }
 }
