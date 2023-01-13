@@ -32,7 +32,7 @@
     "react-pose": "^3.2.1",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
-    "webpack-cli": "^3.0.8",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.1.4"
   }
 }
